@@ -1,0 +1,3 @@
+EmployeeName : sandeep
+Designation : JavaDeveloper
+Salary : 20,000
