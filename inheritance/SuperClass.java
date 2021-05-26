@@ -2,6 +2,7 @@ package com.technoelevate.inheritance;
 
 public class SuperClass 
 {
+	int n=0;
 	SuperClass()
 	{
 		System.out.println("This is superclass constructor");
