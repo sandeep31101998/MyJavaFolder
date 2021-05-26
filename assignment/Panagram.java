@@ -10,10 +10,10 @@ public class Panagram
 	public static void main(String[] args) 
 	{
 		Scanner s = new Scanner(System.in);
-		
+
 		System.out.println("enter the sentence");
 		String str = s.nextLine();
-		
+
 		boolean res = isPanagram(str);
 		if(res)
 		{
@@ -29,13 +29,13 @@ public class Panagram
 	{
 		if(str.length()<26)
 			return false;
-		
+
 		int count[] = new int[26];
-		
+
 		for(int i=0;i<str.length();i++)
 		{
 			char ch = str.charAt(i);
-			
+
 			if(ch>='A'&&ch<='Z')
 			{
 				count[ch-65]++;
