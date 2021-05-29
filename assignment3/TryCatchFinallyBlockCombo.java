@@ -1,4 +1,4 @@
-package com.technoelevate.assignment2;
+package com.technoelevate.assignment3;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -8,35 +8,75 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class WriteReadDataIntoFile {
-
+public class TryCatchFinallyBlockCombo {
 	public static void writeData() throws IOException {
 		FileWriter fw = new FileWriter("E:\\Java\\DemoProj\\src\\com\\technoelevate\\assignment2\\WriteData.txt");
 		BufferedWriter bw = new BufferedWriter(fw);
-		bw.write("EmployeeName : sandeep\n");
-		bw.write("Designation : JavaDeveloper\n");
-		bw.write("Salary : 20,000\n");
-		fw.flush();
-		bw.close();
+		try {
+			bw.write("EmployeeName : sandeep\n");
+			bw.write("Designation : JavaDeveloper\n");
+			bw.write("Salary : 20,000\n");
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			
+			if (bw != null) {
+				try {
+					bw.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (fw!=null) {
+				try {
+					fw.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+
+		}
+
 		System.out.println("-------------------write Sucessful--------------------------");
 	}
 
-	public static void readData() throws IOException {
+	public static void readData() throws FileNotFoundException {
 		FileReader fr = new FileReader("E:\\Java\\DemoProj\\src\\com\\technoelevate\\assignment2\\WriteData.txt");
 		BufferedReader br = new BufferedReader(fr);
 
 		String display;
 
-		while ((display = br.readLine()) != null) {
-			System.out.println(display);
+		try {
+			while ((display = br.readLine()) != null) {
+				System.out.println(display);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+
+			if (br != null) {
+				try {
+					br.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+
+			if (fr != null) {
+				try {
+					fr.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 
-		br.close();
-		fr.close();
 		System.out.println("-------------------Read Sucessful--------------------------");
 	}
 
 	public static void main(String[] args) throws IOException {
+
 		Scanner s = new Scanner(System.in);
 		boolean b = true;
 		while (b) {
@@ -60,11 +100,12 @@ public class WriteReadDataIntoFile {
 				break;
 			}
 		}
-		
-		if(b==false)
-		{
+
+		if (b == false && s!=null) {
+			s.close();
 			System.out.println("Exit Successful");
 		}
+
 	}
 
 }

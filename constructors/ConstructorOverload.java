@@ -11,6 +11,7 @@ public class ConstructorOverload
 	}
 	
 	public ConstructorOverload(int age , String name) {
+		this("sandeep", 12);
 		this.age = age;
 		this.name = name;
 	}
