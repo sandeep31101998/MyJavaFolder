@@ -1,5 +1,7 @@
 package com.technoelevate.assignment3;
 
+import java.util.ArrayList;
+
 public class LamdaExpression {
 
 	public static void main(String[] args) {
@@ -28,6 +30,14 @@ public class LamdaExpression {
 		};
 
 		System.out.println(d11.div(10, 2));
+		
+		
+		ArrayList al = new ArrayList();
+		al.add(10);
+		al.add(20);
+		al.add(30);
+		
+		al.forEach(e->System.out.println(e));
 
 	}
 }
