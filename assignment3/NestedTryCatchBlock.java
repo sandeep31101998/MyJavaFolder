@@ -13,7 +13,7 @@ public class NestedTryCatchBlock {
 
 		Scanner s = new Scanner(System.in);
 		boolean flag = true;
-		while(flag){
+		while (flag) {
 			System.out.println("ENTER THE INDEX TO DISPLAY NUMBER");
 			int index = s.nextInt();
 			try {
@@ -26,7 +26,7 @@ public class NestedTryCatchBlock {
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
-			}finally {
+			} finally {
 				System.out.println("Finally block");
 			}
 		}

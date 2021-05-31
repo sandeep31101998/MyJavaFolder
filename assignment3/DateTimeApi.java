@@ -1,10 +1,15 @@
 package com.technoelevate.assignment3;
 
+/*Issues With the Existing Date/Time APIs 
+Thread safety – The Date and Calendar classes are not thread safe, leaving developers to deal with the headache of hard-to-debug concurrency issues and to write additional code to handle thread safety. On the contrary, the new Date and Time APIs introduced in Java 8 are immutable and thread safe, thus taking that concurrency headache away from developers.
+API design and ease of understanding – The Date and Calendar APIs are poorly designed with inadequate methods to perform day-to-day operations. The new Date/Time API is ISO-centric and follows consistent domain models for date, time, duration and periods. There are a wide variety of utility methods that support the most common operations.
+ZonedDate and Time – Developers had to write additional logic to handle time-zone logic with the old APIs, whereas with the new APIs, handling of time zone can be done with Local and ZonedDate/Time APIs.*/
+
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
-public class DateTimeApi {
+public class DateTimeApi { // Introduction to the Java 8 Date/Time API
 
 	public static void main(String[] args) {
 
@@ -75,13 +80,13 @@ public class DateTimeApi {
 		System.out.println(LocalDateTime.parse("2015-02-20T06:30:00")); // 2015-02-20T06:30
 
 		/* Date and Time Formatting */
-		
+
 		LocalDateTime localDateTime = LocalDateTime.of(2021, Month.MAY, 29, 8, 30);
-		System.out.println(localDateTime);								//2021-05-29T08:30
-		
+		System.out.println(localDateTime); // 2021-05-29T08:30
+
 		String localDateString = localDateTime.format(DateTimeFormatter.ISO_DATE);
-		System.out.println(localDateString);                           //2021-05-29
-		//localDateTime.format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+		System.out.println(localDateString); // 2021-05-29
+		// localDateTime.format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
 	}
 
 }

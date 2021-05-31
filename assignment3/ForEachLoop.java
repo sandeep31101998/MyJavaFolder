@@ -1,6 +1,6 @@
 package com.technoelevate.assignment3;
 
-/*The Java for-each loop or enhanced for loop is introduced since J2SE 5.0.
+/*The Java for-each loop or enhanced for loop is introduced since J2SE 5.0. 
 It provides an alternative approach to traverse the array or collection in Java.
 It is mainly used to traverse the array or collection elements.
 The advantage of the for-each loop is that it eliminates the possibility of bugs and makes the code more readable.
@@ -26,7 +26,7 @@ public class ForEachLoop {
 		for (int res : arr) {
 			System.out.println(res);
 		}
-
+		
 	}
 
 }

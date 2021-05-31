@@ -44,17 +44,17 @@ public class LamdaExpression {
 
 interface Demo // functional interface contains only one method
 {
-	void display();
+	public abstract void display();
 }
 
 interface Sum {
-	int sum(int n1, int n2);
+	public abstract int sum(int n1, int n2);
 }
 
 interface Mul {
-	int mul(int n1, int n2);
+	public abstract int mul(int n1, int n2);
 }
 
 interface Div {
-	int div(int n1, int n2);
+	public abstract int div(int n1, int n2);
 }
